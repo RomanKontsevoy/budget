@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import moment from 'moment';
 import styled from 'styled-components';
-// import Expanse from './Expanse';
-// import Incomes from './Incomes';
+import Expanse from './Expanse';
+import Incomes from './Incomes';
 
 const DateButton = styled.button`
     color: white;
@@ -89,6 +89,13 @@ class App extends Component {
                             Доходы
                         </Link>
                     </Nav>
+
+
+                    {navSelected === 'expanse' ? (
+                        <Expanse onSubmit={this.handleSubmitTransaction} />
+                    ) : (
+                        <Incomes onSubmit={this.handleSubmitTransaction} />
+                    )}
                 </main>
             </section>
 
